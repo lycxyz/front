@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<button>>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html{
+      font-size:20px;
+    }
+    button{
+      /* padding: 6px 16px;  */
+      /* 优化版 */
+      padding: .3em .8em;
+      border: 1px solid #446d88; 
+      background: #58a linear-gradient(#77a0bb, #58a); 
+      /* border-radius: 4px;  */
+      border-radius: .2em; 
+      /* box-shadow: 0 1px 5px gray;  */
+      box-shadow: 0 .05em .25em gray;
+      color: white; 
+      /* text-shadow: 0 -1px 1px #335166;  */
+      text-shadow: 0 -.05em .05em #335166; 
+      /* line-height: 30px; */
+      /* 可以优化的点： 当某些值相互依赖时，应该把 它们的相互关系用代码表达出来*/
+      /* 一旦父级的字号发生了改变，那么所有设置为绝对值的作为字体尺寸的样式都需要修改*/
+      /* font-size: 30px;  */
+      line-height: 1.5; 
+      font-size:125%;
+      /* 设置半透明的黑色或白色*/
+      background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent); 
+    }
+    button.cancel{
+      background-color: #c00; 
+    }
+    button.ok{
+      background-color: #6b0; 
+    }
+  </style>
+</head>
+<body>
+  <button>Btn</button>
+  <br>
+  <br>
+  <button class="ok">OK</button>
+  <button class="cancel">Cancel</button>
+</body>
+</html>

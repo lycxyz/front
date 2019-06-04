@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .ok{
+      text-align:center;
+    }
+    .ok:after,.ok:before{
+      content:"";
+      height:1px;
+      width:800px;
+      top:24px;
+      background-color:red;
+      position: absolute
+    }
+    .ok:after{
+      right:0;
+    }
+    .ok:before{
+      left:0;
+    }
+  </style>
+</head>
+<body>
+  <p class="ok">OK</p>
+</body>
+</html>

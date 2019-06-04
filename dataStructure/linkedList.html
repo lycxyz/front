@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 链表存储有序的元素集合
+  // 每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）
+  // 创建链表
+  function LinkedList(){
+    let Node = function(element){  //把element作为值传入，创建Node项
+      this.element = element;
+      this.next = null;
+    };
+    let length = 0;
+    let head = null; //存储第一个节点的引用，因此将其存储在一个称为head的变量中
+    // 列表最后一个节点的下一个元素始终为null
+    this.append = function(element){
+      let node = new Node(element),current;
+      if(head === null){
+        head = node;  //场景一，向为空的列表添加一个元素，要做的是让head元素指向node元素，下一个node元素会自动成为null
+      }else{
+        current = head;  //场景2，向一个不为空的列表尾部添加元素，首先要找到最后一个元素，此时只有第一个元素的引用，所以需要
+        // 循环访问列表，直到找到最后一项，需要一个只想列表中current项的变量
+        while(current.next){  //一旦current.next的值为null，已经达到列表尾部了
+        current = current.next;
+      }
+          current.next = node; // 找到最后一项，将其next赋值为node，建立链接，让当前元素的next指针指向想要添加到列表的节点
+      }
+      length++; //变更更新链表的长度
+    }; 
+    //向列表尾部添加一个新的项
+    this.insert = function(position, element){
+
+    }; //向列表的特定位置插入一个新的项
+    this.removeAt = function(position){
+
+    }; // 从列表的某一特定位置移除某一项
+    this.remove = function(element){
+
+    };
+    this.indexOf = function(element){
+
+    }; //返回元素在列表的索引。若没有则返回-1
+    this.isEmpty=function(){
+
+    };  //判断链表是否为空
+    this.size = function(){
+
+    };  //返回链表包含的元素个数
+    this.getHead = function(){
+
+    };  // 
+    this.toString =function(){
+
+    };  // 输出元素的值
+    this.print = function(){
+
+    }
+    // LinkedList数据结构还需要一个Node辅助类，该类表示要加入列表的项。他包含一个element的属性，即要添加到列表的值，
+    // 以及一个next属性，即指向列表中下一个节点项的指针
+
+  }
+</script>
+</html>

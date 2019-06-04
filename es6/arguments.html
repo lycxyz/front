@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .Parent{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .boxShadow{
+      margin-top:200px;
+      width:200px;
+      height:100px;
+      background: yellowgreen; 
+      box-shadow:  0 0 0 10px #655, 0 0 0 30px deeppink, 0 0 0 50px lightblue , 0 0 0 70px lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="Parent">
+      <div class="boxShadow">
+        </div>
+  </div>
+</body>
+<script>
+  function sum() 
+  {
+    var sum=0;
+      for(var i=0;i<arguments.length;i++)
+      {
+        sum += arguments[i] 
+      } 
+    return sum;
+  }
+  function infiltrate(person){
+    console.assert(person === 'gardener','The person is gardener');
+    console.assert(arguments[0] === 'gardener','The first argument is gardener');
+    arguments[0] = 'ninja';
+    console.assert(person === 'ninja','The person is a ninja now');
+    console.assert(arguments[0] === 'ninja','The first argument is a ninja');
+    person = 'gardener';
+    console.assert(person === 'gardener','The person is a gardener once more');
+    console.assert(arguments[0] === 'gardener','The first argument is gardener again');
+  }
+  console.assert(sum(1,2) === 3,"We can add two numbers");
+  infiltrate("gardener");
+</script>
+</html>

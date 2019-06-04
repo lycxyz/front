@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Quene() {
+    let items = [];
+    this.enquene = function(element){
+      items.push(element);
+    };
+    this.dequene = function(){
+      return items.shift();
+    }
+    this.front = function(){
+      return items[0];
+    }
+    this.isEmpty = function(){
+      return items.length == 0;
+    }
+    this.size = function(){
+      return items.length;
+    }
+    this.print = function(){
+      console.log(items.toString());
+    }
+  }
+  let quene = new Quene();
+  console.log(quene.isEmpty());
+  quene.enquene(1);
+  quene.enquene(3);
+  quene.enquene(5);
+  quene.enquene(6);
+  quene.enquene(4);
+  quene.enquene(2);
+  quene.print();
+  console.log("队列的首个元素是:"+ quene.front());
+  quene.dequene();
+  quene.print();
+  quene.dequene();
+  quene.print();
+  quene.dequene();
+  quene.print();
+</script>
+</html>

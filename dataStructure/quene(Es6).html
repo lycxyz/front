@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+    let Quene2 = (function(){
+    const items = new WeakMap();
+    class Quene2 {
+    constructor(){
+      items.set(this, []);
+    }
+    enquene(element){
+      let q = items.get(this);
+      q.push(element);
+    }
+    dequene(){
+      let q = items.get(this);
+      let r = q.shift();
+      return r;
+    }
+    front(){
+      let q = items.get(this);
+      return q[0];
+    }
+    isEmpty(){
+      let q = items.get(this);
+      return q.length == 0;
+    }
+    size(){
+      let q = items.get(this);
+      return q.length;
+    }
+    print(){
+      let q = items.get(this);
+      console.log(q.toString());
+    }
+  }
+  return Quene2;
+})();
+let quene3 = new Quene2();
+console.log(quene3.isEmpty());
+quene3.enquene('lyc');
+quene3.enquene("lhp");
+quene3.enquene("lhl");
+quene3.print();
+quene3.dequene();
+quene3.print();
+</script>
+</html>
