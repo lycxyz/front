@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+// Symbol的概念，Symbol的作用
+// 提供一个独一无二的值，保证唯一
+{
+  let a1 = Symbol();
+  let a2 = Symbol();
+  console.log(a1===a2);
+  // for里面的参数是key值,检测key值有没有被使用过，没有的话在用Symbol构建一个
+  let a3 = Symbol.for('a3');
+  let a4 = Symbol.for('a3');
+  console.log(a3===a4);
+}
+{
+  let a1 = Symbol.for('abc');
+  let obj = {
+    [a1]:'123',
+    'abc':345,
+    'c':456
+  }
+  console.log('obj:',obj);
+  // 注意用对象中symbol定义的key，使用for和iterator都是得不到的
+  for(let [key,value] of Object.entries(obj)){
+    console.log('let of,',key,value);
+    // 打印的结果是
+    // let of, abc 345 ; let of, c 456
+  }
+  console.log('-----------------------------');
+  Object.getOwnPropertySymbols(obj).forEach(item=>{
+    console.log(obj[item]);
+  })
+  // 可以拿到对象的所有key与value属性值了
+  console.log('所有的属性值如下');
+  Reflect.ownKeys(obj).forEach((element) => {
+    console.log('own keys', element,obj[element]);
+    
+  });
+}
+
+
+</script>
+</html>

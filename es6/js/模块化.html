@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 使用函数作为模块,利用闭包
+  (function countClicks(){
+      let numClicks = 0;
+      document.addEventListener("click",()=>{
+        alert(++numClicks);
+      })
+    }
+  )();
+  // 使用函数扩展模块，使用对象接口
+  
+</script>
+</html>

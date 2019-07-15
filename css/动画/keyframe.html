@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .container{
+      width:100px;
+      height:100px;
+      background-color: red;
+      /* 关键帧属性 */
+      /* animation: run 1s; */
+
+      /* 匀速的 */
+      animation: run 1s linear;  
+      /* 动画反向 */
+      animation-direction: reverse;
+      /* 循环次数 值为infinite表示无限循环*/
+      animation-iteration-count: 2;
+      /* 动画状态 ,js在控制时可以使用*/
+      /* animation-play-state:paused; */
+      /* 动画往前走停在那里，不再回来 */
+      animation-fill-mode: forwards;
+    }
+    @keyframes run{
+      /* from---0；to---100% */
+      0%{
+        width:100px;
+      }
+      100%{
+        width:800px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container"></div>
+</body>
+</html>

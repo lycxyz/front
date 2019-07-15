@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1{
+      border:5px solid #000;
+      width:400px;
+      height:200px;
+      box-shadow: 0 0 0 5px #CCC, 0 0 0 10px #FC0, 0 0 0 15px #f00 inset;
+      border-radius:20px;
+    }
+    .div2{
+      width:400px;
+      height:200px;
+      border:25px solid #000;
+      /* 注意outline的边框只能是执教，没有圆角 */
+      outline:25px solid #FC0; 
+      border-radius:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2" style="margin-top:200px;"></div>
+</body>
+
+</html>

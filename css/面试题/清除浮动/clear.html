@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding:0;
+      margin:0
+    }
+    .main{
+      border:2px solid black;
+      /* overflow:hidden */
+    }
+    .main:after{
+      content:"";
+      clear:both;
+      display:table;
+    }
+    .d1{
+      height:100px;
+      width:100px;
+      background-color: lightblue;
+      float:left;
+    }
+    .d2{
+      height:100px;
+      width:100px;
+      background-color: lightcoral;
+      float:left;
+    }
+    .d3{
+      height:100px;
+      width:100px;
+      background-color: lightgreen;
+      float:left;
+    }
+    /* .clear{
+      clear:both;
+    } */
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <!-- <div class="clear"></div> -->
+  </div>
+</body>
+<script>
+// 清除浮动
+// 方法1：添加一个盒子，加入clear:both，缺点是无效加载了一各新盒子
+// 方法2：给父元素加入一个属性overflow:hidden;
+// 方法3：给父元素加入使用after的伪类，
+  // .main:after{
+  // content:"";
+  //     clear:both;
+  //     display:table;
+  //   }
+</script>
+</html>

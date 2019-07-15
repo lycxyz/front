@@ -1,0 +1,1 @@
+// node为javascript提供了很多服务器级别的API，这些API绝大多数都被包装到了一个具名的核心模块中了，比如fs，http，path模块等

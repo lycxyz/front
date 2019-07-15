@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let fun1 = (x,y='world') => {
+    console.log('默认值是', x, y);
+  }
+  // 不传参数的
+  console.log('--不传参的情况--');
+  fun1('hello');
+  // 传参的
+  console.log('--传参的情况--');
+  fun1('hello','luyuchen');
+
+
+  let fun2 = ()=>{
+    let x = 'test';
+    let test2 = (c,y=x) =>{
+      console.log('作用域', c, y);
+    }
+    // let test2 = (x,y=x) =>{
+    //   console.log('作用域', x, y);
+    // }
+
+    //test2('kill');  
+    //作用域 kill kill
+
+    //test2(); 
+    //作用域 undefined undefined
+
+    test2('kill');
+    // 作用域 kill test
+  }
+  fun2();
+
+  // ...参数的作用是将所有传递进来的参数默认处理成为一个数组，不确定有多少参数时，将这些参数全部转换为一个数组
+  // ...后不可以有其他参数了
+  let test3 = (...arg)=>{
+    for(let v of arg){
+      console.log('rest',v);
+    }
+  }
+  test3(1,2,3,4,5,11,22,33,'a','b','c');
+
+
+  let test4 = ()=>{
+    console.log(...[1,2,3]);   //1,2,3
+    console.log('a',...[1,3,5,7]);  //a,1,3,5,7
+  }
+  test4();  //结果是1,2,3  作用是将一个数组拆成了一个个离散的值
+</script>
+<!-- 注意事项，默认参数后面不能再跟其他没有给定默认值的参数 -->
+</html>

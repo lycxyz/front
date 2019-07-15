@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+function Set() {
+  let items ={};
+}
+this.has = function(value){
+  // return value in items;
+  return items.hasOwnProperty(value);
+}
+this.add = function(value){
+  if(!this.has(value)){
+    items[value] = value; //如果不存在，就把value添加到集合中，返回true,添加一个值的时候，把它作为键和值保存，这样有利于查找这个值
+    return true;
+  }
+  return false; //如果几何中已经有这个值，就返回false
+}
+this.remove = function(value){
+  if(this.has(value)){
+    delete items[value];
+    return true;
+  }
+  return false;
+}
+</script>
+</html>

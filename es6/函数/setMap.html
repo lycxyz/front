@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+{
+  let list = new Set();
+  // 用add方法向set添加数据
+  list.add(5);
+  list.add(7);
+  console.log('size',list.size);
+}
+{
+  let arr = [1,2,3,4,5];
+  let list = new Set(arr);
+  console.log('size',list.size);
+}
+{
+  //去重
+  let list = new Set();
+  list.add(1);
+  list.add(2);
+  console.log('list',list);  //1,2 重复的元素被去掉了
+}
+{
+  let arr = [1,2,3,1,2,'2'];
+  let list = new Set(arr);
+  console.log('list',list); //1,2,3,'2'
+}
+// 做转换时不会进行数据类型的转换
+{
+  let arr = ['add','delete','clear','has'];
+  let list = new Set(arr);
+  console.log('has',list.has('add'));
+  console.log('delete',list.delete('add'),list);
+  list.clear();
+  console.log('list',list);
+}
+{
+  // set示例的遍历
+  let arr = ['add','delete','clear','has'];
+  let list = new Set(arr);
+
+  for(let key of list.keys()){
+    console.log('keys',key);
+  }
+  for(let value of list.keys()){
+    console.log('values',value);
+  }
+  for(let value of list){
+    console.log('values',value);
+  }
+  list.forEach((item)=>{
+    console.log(item);
+  })
+
+}
+{
+  // weakset只能是对象
+  let weakList = new WeakSet();
+  // 对象都是弱引用，地址引用，容易引发错误，没有size属性
+  let arg = {};
+  weakList.add(arg);
+  console.log('weaklist',weakList);
+  // weakList.add('2');  //只能添加对象
+}
+{
+  let map = new Map();
+  let arr = ['123'];
+
+  map.set(arr,456);
+  console.log('map',map,map.get(arr));
+}
+</script>
+</html>

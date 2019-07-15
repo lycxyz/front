@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  {
+    let o = 1;
+    let k = 2;
+    let es5 = {
+      o:o,
+      k:k,
+    }
+    // es6简写方法
+    let es6={
+      o,
+      k
+    };
+    console.log(es5,es6);
+
+    // method
+    let es5_method={
+      hello:function(){
+        console.log('hello');
+      },
+    }
+    let es6_method={
+      hello(){
+        console.log('hello');
+      }
+    };
+    console.log(es5_method.hello(),es6_method.hello());
+  };
+  {
+    // 属性表达式
+    let a='b';
+    let es5_obj={
+      a:'c',
+      b:'c'
+    };
+    let es6_obj={
+      // 键值可以是一个变量，也可以是字符串
+      [a]:'c'
+    }
+    console.log(es5_obj,es6_obj);
+  }
+  // object新增的API
+  {
+    // 判断两个参数是不是相等，与===的效果相同
+    console.log('字符串',Object.is('abc','abc'));
+    console.log('数组',Object.is([],[]),[]===[]);
+  }
+</script>
+</html>

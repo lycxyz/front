@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 带var和function关键字声明相同的名字，这种也算是重名了，其实是一个fn，只是存储的值的类型不一样
+  // 关于重名后怎么处理？ 如果名字重复了，不会重声明，但是会重新定义（其实就是赋值），不管是变量提升黑市代码执行阶段都是如此
+
+// 全局下的变量提升
+//  fn = ...(1)
+//       ...(2)
+//   
+//       ...(3) 
+//       ...(4)
+fn();  //4
+function fn(){
+  console.log(1);
+}
+fn();  //4 
+function fn(){
+  console.log(2);
+}
+fn();  //4
+var fn = 100;  //带var的在提升阶段只把声明处理了，没有赋值，所以在代码执行的时候需要赋值，此时fn为100
+fn();  //fn = 100; fn is not a function
+function fn(){
+  console.log(3);
+}
+fn(); 
+function fn(){
+  console.log(4);
+}
+fn();
+// 这两个重名吗？
+</script>
+</html>

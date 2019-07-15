@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    #wrap{  
+      position: absolute;
+      left:0;
+      top:0;
+      right:0;
+      bottom:0;
+      margin:auto;
+      width:300px;
+      height:300px;
+      border:1px solid;
+      perspective: 200px;
+      transform-style: preserve-3d
+    }
+    #wrap > .box{
+      position:absolute;
+      width:100px;
+      height:100px;
+      margin:auto;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      background:pink;
+    }
+    #wrap > .box > div{
+      position:absolute;
+      width:100px;
+      height:100px;
+      background:pink; 
+      text-align:center;
+      font: 50px/100px '微软雅黑'
+    }
+    #wrap > .box > div:nth-child(5){
+      transform-origin: bottom;
+      transform:rotateX(90deg);
+      top:-100px;
+    }
+    #wrap > .box > div:nth-child(6){
+      bottom:-100px;
+      transform-origin: top;
+      transform:rotateX(-90deg);
+    }
+    #wrap > .box > div:nth-child(3){
+      right:100px;
+      transform-origin: right;
+      transform:rotateY(90deg);
+    }
+    #wrap > .box > div:nth-child(4){
+      left:100px;
+      transform-origin: left;
+      transform:rotateY(90deg);
+    }
+    #wrap > .box > div:nth-child(2){
+      right:100px;
+      transform:translateZ(-100px);
+    }
+    #wrap > .box > div:nth-child(1){
+      z-index:1;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="box">
+      <div>前</div>
+      <div>后</div>
+      <div>左</div>
+      <div>右</div>
+      <div>上</div>
+      <div>下</div>
+    </div>
+  </div>
+</body>
+</html>
